@@ -1,0 +1,245 @@
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-primary: #f8fafc;
+  --bg-card: #ffffff;
+  --text-primary: #0f172a;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --danger-color: #ef4444;
+  --danger-hover: #dc2626;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --radius: 10px;
+}
+
+/* Dark Mode Variables */
+[data-theme='dark'] {
+  --bg-primary: #0f172a;
+  --bg-card: #1e293b;
+  --text-primary: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+}
+
+/* Global Reset & Body */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Main Container */
+.app-container {
+  max-width: 680px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.header h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+/* Base Button Styling */
+button {
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  border-radius: var(--radius);
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Theme Toggle Button */
+.theme-btn {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-btn:hover {
+  background-color: var(--border-color);
+}
+
+/* Inputs & Select Elements */
+input[type="text"],
+select {
+  font-family: inherit;
+  font-size: 0.875rem;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Form Styles */
+.task-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.task-form input[type="text"] {
+  flex: 1;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Filter Bar */
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+/* Reusable Card Wrapper */
+.card-wrapper {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card-wrapper:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Task Item */
+.task-card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-title {
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+.task-title.completed {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+/* Priority Badges */
+.badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-low {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.badge-medium {
+  background-color: #fef3c7;
+  color: #b45309;
+}
+
+.badge-high {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: #ffffff;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+}
+
+.btn-danger:hover {
+  background-color: var(--danger-hover);
+}
+
+/* Empty State & Logs */
+.empty-state {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.activity-logger {
+  margin-top: 32px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 24px;
+}
+
+.activity-logger h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.log-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.log-item {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 8px 12px;
+  border-radius: 6px;
+}
